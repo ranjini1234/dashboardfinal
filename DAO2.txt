@@ -1,0 +1,64 @@
+package com;
+
+import java.util.Iterator;
+import java.util.List;
+
+import javax.management.Query;
+
+public class Dao {
+	private static SessionFactory factory;
+	public static void instantiate(){	
+	 
+	      try{
+	         factory = new Configuration().configure().buildSessionFactory();
+	      }catch (Throwable ex) { 
+	         System.err.println("Failed to create sessionFactory object." + ex);
+	         throw new ExceptionInInitializerError(ex); 
+	      }
+	     
+	}
+	public void listDashs( ){
+	      Session session = factory.openSession();
+	      Transaction tx = null;
+	      try{
+	         tx = session.beginTransaction();
+	         List dashs = session.createQuery("FROM Task").list(); 
+	         for (Iterator iterator = 
+	                           dashs.iterator(); iterator.hasNext();){
+	            Dash dashs = (Dash) iterator.next(); 
+	            
+	            
+	         }
+	         tx.commit();
+	      }catch (HibernateException e) {
+	         if (tx!=null) tx.rollback();
+	         e.printStackTrace(); 
+	      }finally {
+	         session.close(); 
+	      }
+	   }
+	public Dash displayDash(int bankid){
+		   Session session = factory.openSession();
+		   Transaction tx = session.beginTransaction();
+		  
+		   Query query = session.createQuery("select count(bankid) from Task where Intro_call_by_obs ="COMPLETED" " and "INTRODUCTION CALL TO N.H");
+		   Query query = session.createQuery("select count(bankid) from Task where Intro_email_NH  ="COMPLETED" " and "INTRODUCTION EMAIL TO N.H"); 
+			  Query query = session.createQuery("select count(bankid) from Task where email_LM_Reconfirm_doj ="COMPLETED" " and "E-MAIL TO L.M FOR RECONFIRMING D.O.J OF N.H");
+			   Query query = session.createQuery("select count(bankid) from Task where LM_call_to_NH ="COMPLETED" " and "INFORMING THE NH THAT THE L.M WILL CONNECT");
+			  Query query = session.createQuery("select count(bankid) from Task where Intimate_NH_unithead_call ="COMPLETED" " and "INFORMATION CALL TO N.H THAT THE UNIT HEAD WILL CONNECT");
+			   Query query = session.createQuery("select count(bankid) from Task where Intimate_NH_LM_connect ="COMPLETED" " and "	INFORMATION CALL TO N.H THAT THE UNIT HEAD WILL CONNECT");
+			  Query query = session.createQuery("select count(bankid) from Task where welcome_mail ="COMPLETED" " and "WELCOME MAIL	");
+		   query.setParameter("bankid", bankid);
+		   System.out.println(query);
+		   Dash d;
+		   Iterator<Dash> it=query.list().iterator();
+		   d=it.next();
+		   System.out.println(d);
+		  return d;
+		  
+		 
+		   
+	   }
+	
+	
+}
