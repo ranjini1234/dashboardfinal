@@ -1,0 +1,69 @@
+package com;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class DisplayServlet
+ */
+public class DisplayServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public DisplayServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.setContentType("text/html");  
+        PrintWriter out=response.getWriter();  
+        out.println("<h1>Add BU_Master Details</h1>");  
+        out.print("<form action='SaveServlet' method='post'>");  
+        out.print("<table>");  
+       
+        out.print("<tr><td>Cost_Center:<input type='text' name='Cost_Center'</td></tr>");  
+        out.print("<tr><td>BU_Name<input type='text' name='BU_Name' </td></tr>");  
+        out.print("<tr><td>BU_Owner_Id<input type='text' name='BU_Owner_Id' </td></tr>");
+        out.print("<tr><td>BU_Owner_Name<input type='text' name='BU_Owner_Name' </td></tr>");
+        out.print("<tr><td>BU_SEATING_RATIO<input type='text' name='BU_SEATING_RATIO' </td></tr>");
+        
+        out.print("<tr><td>CC_Effective_Start_Date<input type='text' name='CC_Effective_Start_Date' </td></tr>");  
+        out.print("<tr><td>Active_Flag:</td><td>");  
+        out.print("<select name='Active_Flag' style='width:50px'>");  
+        out.print("<option>Y</option>");  
+        out.print("<option>N</option>");  
+        out.print("</select>");  
+        out.print("</td></tr>");  
+
+
+        out.print("<tr><td colspan='2'><input type='submit' value='Save '/></td></tr>");  
+        out.print("</table>");  
+        out.print("</form>");  
+          
+        out.close(); 
+	
+		
+	}
+
+	
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	}
+
+}

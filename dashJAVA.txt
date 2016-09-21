@@ -1,0 +1,85 @@
+package com;
+
+public class Dash {
+	private int bankid;
+	private String empname;
+	private String Intro_call_by_obs;
+	private String Intro_email_NH;
+	private String email_LM_Reconfirm_doj;
+	private String LM_call_to_NH;
+	private String Intimate_NH_LM_connect;
+	private String Intimate_NH_unithead_call;
+	private String welcome_mail;
+	private String duration;
+	private String status;
+	public int getBankid() {
+		return bankid;
+	}
+	public void setBankid(int bankid) {
+		this.bankid = bankid;
+	}
+	public String getEmpname() {
+		return empname;
+	}
+	public void setEmpname(String empname) {
+		this.empname = empname;
+	}
+	public String getIntro_call_by_obs() {
+		return Intro_call_by_obs;
+	}
+	public void setIntro_call_by_obs(String intro_call_by_obs) {
+		Intro_call_by_obs = intro_call_by_obs;
+	}
+	public String getIntro_email_NH() {
+		return Intro_email_NH;
+	}
+	public void setIntro_email_NH(String intro_email_NH) {
+		Intro_email_NH = intro_email_NH;
+	}
+	public String getEmail_LM_Reconfirm_doj() {
+		return email_LM_Reconfirm_doj;
+	}
+	public void setEmail_LM_Reconfirm_doj(String email_LM_Reconfirm_doj) {
+		this.email_LM_Reconfirm_doj = email_LM_Reconfirm_doj;
+	}
+	public String getLM_call_to_NH() {
+		return LM_call_to_NH;
+	}
+	public void setLM_call_to_NH(String lM_call_to_NH) {
+		LM_call_to_NH = lM_call_to_NH;
+	}
+	public String getIntimate_NH_LM_connect() {
+		return Intimate_NH_LM_connect;
+	}
+	public void setIntimate_NH_LM_connect(String intimate_NH_LM_connect) {
+		Intimate_NH_LM_connect = intimate_NH_LM_connect;
+	}
+	public String getIntimate_NH_unithead_call() {
+		return Intimate_NH_unithead_call;
+	}
+	public void setIntimate_NH_unithead_call(String intimate_NH_unithead_call) {
+		Intimate_NH_unithead_call = intimate_NH_unithead_call;
+	}
+	public String getWelcome_mail() {
+		return welcome_mail;
+	}
+	public void setWelcome_mail(String welcome_mail) {
+		this.welcome_mail = welcome_mail;
+	}
+	public String getDuration() {
+		return duration;
+	}
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	
+	
+
+	
+}

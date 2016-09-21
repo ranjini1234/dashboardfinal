@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+ <hibernate-mapping>
+ 	<class name="com.pack.Checklist" table="TASK">
+ 	<meta attribute="class-description">
+         This class contains the employee detail. 
+    </meta>
+      <id name="bankid" type="int" column="bank_id">
+       <generator class="assigned" />
+      </id>
+      <property name="empname" column="emp_name" type="string"/>
+      
+       <property name="Intro_call_by_obs" column="Intro_call_by_obs" type="string"/>
+        <property name="Intro_email_NH" column="Intro_email_NH" type="string"/>
+         <property name="email_LM_Reconfirm_doj" column="email_LM_Reconfirm_doj" type="string"/>
+          <property name="LM_call_to_NH" column="LM_call_to_NH" type="string"/>
+           <property name="Intimate_NH_LM_connect" column="Intimate_NH_LM_connect" type="string"/>
+            <property name="Intimate_NH_unithead_call" column="Intimate_NH_unithead_call" type="string"/>
+             <property name="welcome_mail" column="welcome_mail" type="string"/>
+ 	</class>
+ </hibernate-mapping>
